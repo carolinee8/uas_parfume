@@ -1,7 +1,7 @@
 @extends('admin.layouts.main')
 @section('content')
             <div class="card card-body printableArea">
-                <h3><b>My profile</b> <span class="pull-right"></span></h3>
+                <h3><b>Dashboard</b> <span class="pull-right"></span></h3>
                 <hr>
                 <div class="row">
                   <div class="col-md-12">

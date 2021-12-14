@@ -11,10 +11,5 @@ class Acara extends Model
 
     protected $primaryKey = 'acara_id';
 
-    protected $fillable = [
-        'acara_title',
-        'acara_excerpt',
-        'acara_desc',
-        'acara_image'
-    ];
+    protected $guarded = [];
 }
