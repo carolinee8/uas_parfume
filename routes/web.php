@@ -10,17 +10,6 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', [BrandController::class, 'index']);
 
 Route::get('/brand', [BrandController::class, 'index']);
@@ -40,6 +29,36 @@ Route::post('/logout', [LogoutController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
-// Route::resource('/dashboard/admin_management'. AdminManagementController::class)->except('show')->middlerware('auth');
+/**
+* superadmin
+*/
+//--------------------------------------------//
+Route::get('/admin/admin-product', function () {
+    return view('admin/pages/admin-product');
+});
+Route::get('/admin/cproduct', function () {
+    return view('admin/pages/cproduct');
+});
+Route::get('/admin/uproduct', function () {
+    return view('admin/pages/uproduct');
+});
+Route::get('/admin/dproduct', function () {
+    return view('admin/pages/dproduct');
+});
+//--------------------------------------------//
+Route::get('/admin/admin-event', function () {
+    return view('admin/pages/admin-event');
+});
+Route::get('/admin/admin-brand', function () {
+    return view('admin/pages/admin-brand');
+});
+Route::get('/admin/admin-profile', function () {
+    return view('admin/pages/admin-profile');
+});
+Route::get('/admin/admin-management', function () {
+    return view('admin/pages/admin-management');
+});
+Route::get('/admin/cevent', function () {
+    return view('admin/pages/cevent');
+});

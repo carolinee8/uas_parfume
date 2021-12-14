@@ -13,9 +13,9 @@ class Brand extends Model
 
     protected $primaryKey = 'brand_id';
 
-    // protected $fillable = [
-    //     'brand_judul',
-    //     'brand_desc',
-    //     'brand_image',
-    // ];
+    protected $fillable = [
+        'brand_judul',
+        'brand_desc',
+        'brand_image',
+    ];
 }
