@@ -14,7 +14,9 @@ class BrandFactory extends Factory
     public function definition()
     {
         return [
-            //
+           'brand_judul'=> $this->faker->sentence(mt_rand(1,3)),
+           'brand_desc'=> $this->faker->paragraph(),
+           'brand_image'=> $this->faker->sentence(mt_rand(1,3))
         ];
     }
 }
