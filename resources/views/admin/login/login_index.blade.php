@@ -26,6 +26,11 @@
 					{{ session('success') }}
 				</div>
 				@endif
+				@if(session()->has('loginError'))
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					{{ session('loginError') }}
+				</div>
+				@endif
 				<div class="col-md-12 col-lg-10">
 					<div class="wrap d-md-flex">
 						<div class="img" style="background-image: url({{ asset('admin_assets/images/bg-1.jpg') }});"></div>
@@ -36,14 +41,20 @@
                                     <h6 class="mb-4">Please Log In</h6>
                                 </div>
                             </div>
-							<form action="#" class="signin-form">
+							<form action="/login" method="post" class="signin-form">
+								@csrf
                                 <div class="form-group mb-3">
                                     <label class="label" for="name">Username</label>
-                                    <input type="text" class="form-control" placeholder="Username" required>
-                                </div>
+                                    <input type="text" name="username" id="username" class="form-control @error('username') is-invalid @enderror" placeholder="Username" required value="{{ old('username') }}">
+									@error('username')
+										<div class="invalid-feedback">
+											{{ $message }}
+										</div>
+									@enderror
+								</div>
                                 <div class="form-group mb-3">
                                     <label class="label" for="password">Password</label>
-                                <input type="password" class="form-control" placeholder="Password" required>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="form-control btn btn-primary rounded submit px-3">Login In</button>

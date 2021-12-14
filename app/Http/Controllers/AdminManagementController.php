@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Brand;
+use App\Models\AdminManagement;
 use Illuminate\Http\Request;
 
-class BrandController extends Controller
+class AdminManagementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,7 @@ class BrandController extends Controller
      */
     public function index()
     {
-        return view('brand', [
-            "title" => "Brand",
-            "active" => "brand",
-            "brand" => Brand::all()
-        ]);
+        return 'ini halaman admin management';
     }
 
     /**
@@ -45,23 +41,21 @@ class BrandController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Brand  $brand
+     * @param  \App\Models\AdminManagement  $adminManagement
      * @return \Illuminate\Http\Response
      */
-    public function show(Brand $brand)
+    public function show(AdminManagement $adminManagement)
     {
-        return view('brand', [
-            "brand" => $brand
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Brand  $brand
+     * @param  \App\Models\AdminManagement  $adminManagement
      * @return \Illuminate\Http\Response
      */
-    public function edit(Brand $brand)
+    public function edit(AdminManagement $adminManagement)
     {
         //
     }
@@ -70,10 +64,10 @@ class BrandController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Brand  $brand
+     * @param  \App\Models\AdminManagement  $adminManagement
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Brand $brand)
+    public function update(Request $request, AdminManagement $adminManagement)
     {
         //
     }
@@ -81,10 +75,10 @@ class BrandController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Brand  $brand
+     * @param  \App\Models\AdminManagement  $adminManagement
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Brand $brand)
+    public function destroy(AdminManagement $adminManagement)
     {
         //
     }
