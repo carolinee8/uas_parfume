@@ -28,7 +28,6 @@
                         aria-expanded="false"><i class="fas fa-bookmark"></i><span
                             class="hide-menu">Tag</span></a>
                 </li>
-
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
                         aria-expanded="false"><i class="fas fa-sliders-h"></i><span class="hide-menu">App

@@ -11,7 +11,7 @@
 			</nav>
 
 			<div class="colorlib-footer">
-				<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				<p><small>&copy; Kelompok 2
 			</div>
 
 		</aside>

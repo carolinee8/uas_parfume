@@ -1,14 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+
 	<div id="colorlib-main">
-		<div class="row d-flex justify-content-end">
-			<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box ms-auto p-2 bd-highlight" data-animate-effect="fadeInLeft">
-				<a href="/acara" class="btn btn-primary btn-learn">Back</a>
-			</div>
-		</div>
+
 		<div class="colorlib-about">
 			<div class="colorlib-narrow-content">
+				<div class="row d-flex">
+					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box mx-auto p-2 bd-highlight" data-animate-effect="fadeInLeft">
+						<a href="/acara"><button type="button" class="btn btn-primary btn-learn">Back</button></a>
+					</div>
+				</div>
 				<div class="row">
 					<div class="col-md-6">
 						<div class="about-img animate-box" data-animate-effect="fadeInLeft" style="background-image: url({{ $detail_acara->acara_image }});">
@@ -22,7 +24,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
 		</div>
 	</div>
 	

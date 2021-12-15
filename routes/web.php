@@ -34,10 +34,6 @@ Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 
 
-/**
-* superadmin
-*/
-//--------------------------------------------//
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', function(){
         return view('admin/dashboard/dashboard');

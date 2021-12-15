@@ -10,21 +10,19 @@
                         <thead>
                           <tr>
                             <th class="text-center">Image</th>
-                            <th class="text-center">Id</th>
+                            <th class="text-center">Name</th>
+                            <th class="text-center">Username</th>
                             <th class="text-center">Email</th>
-                            <th class="text-center">role</th>
-                            <th class="text-center">created</th>
-                            <th class="text-center">update</th>
+                            <th class="text-center">Role</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td class="text-center">sesuai sesi login</td>
-                            <td class="text-center">sesuai sesi login</td>
-                            <td class="text-center">sesuai sesi login</td>
-                            <td class="text-center">sesuai sesi login</td>
-                            <td class="text-center">sesuai sesi login</td>
-                            <td class="text-center">sesuai sesi login</td>
+                            {{-- <td class="text-center">{{ $auth()->user()->user_image }}</td>
+                            <td class="text-center">{{ $auth()->user()->name }}</td>
+                            <td class="text-center">{{ $auth()->user()->username }}</td>
+                            <td class="text-center">{{ $auth()->user()->email }}</td>
+                            <td class="text-center">{{ $auth()->user()->role}}</td> --}}
                           </tr>
                         </tbody>
                       </table>

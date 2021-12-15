@@ -43,9 +43,9 @@
                                 <div class="form-group mb-5">
                                     <label class="label" for="image">Profile Photo</label>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="validatedCustomFile" name="image" required>
-                                        <label class="custom-file-label" for="validatedCustomFile"></label>
-                                        @error('image')
+                                        <input type="file" class="custom-file-input" id="user_image" name="user_image" required>
+                                        <label class="custom-file-label" for="user_image"></label>
+                                        @error('user_image')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
