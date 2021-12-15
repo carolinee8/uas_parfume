@@ -14,20 +14,12 @@
                       <thead>
                         <tr>
                           <th><b>Images</b></th>
-<<<<<<< HEAD
-                          <th><b>Brand</b></th>
-                          <th><b>Descriptions</b></th>
-                          <th>
-                            <center>
-                              <a href="cbrand">
-=======
                           <th><b>Brands</b></th>
                           <th><b>Descriptions</b></th>
                           <th><b>Date</b></th>
                           <th>
                             <center>
                               <a href="/admin/admin-brand/create">
->>>>>>> 66db915ba8950d1042e0104230f896445ad80e9d
                               <button type="button" class="btn btn-success text-white btn-lg">
                                   <i class="fas fa-plus"></i>
                               </button>
@@ -36,27 +28,6 @@
                           </th>
                       </thead>
                       <tbody>
-<<<<<<< HEAD
-                        <tr>
-                          <td>Logo brand</td>
-                          <td>nama brand</td>
-                          <td>deskripsi</td>
-                          <td>
-                            <center>
-                            <div class="btn-group">
-                              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-sliders-h"></i>
-                              </button>
-                              <div class="dropdown-menu" style="margin: 0px;">
-                                <a href="" class="dropdown-item" href="#"><i class="fas fa-edit"></i> Edit</a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-cut"></i> Hapus</a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-info"></i> Detail</a>
-                              </div>
-                            </div>
-                            </center>
-                          </td>
-                        </td>
-=======
                         @foreach ($brand as $item)
                           <tr>
                             <td>
@@ -94,7 +65,6 @@
                             </td>
                         </tr>
                         @endforeach
->>>>>>> 66db915ba8950d1042e0104230f896445ad80e9d
                       </tbody>
                       </div>
                     </table>

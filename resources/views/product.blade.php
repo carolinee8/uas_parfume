@@ -20,7 +20,7 @@
 					<div class="row row-bottom-padded-md">
 						@foreach ($product as $detail_product)
 						<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url('https://source.unsplash.com/600x200/?parfume);">
+							<div class="project" style="background-image: url({{ $detail_product->product_image }});">
 								<div class="desc">
 									<div class="con">
 										<h3><a href="/product/{{ $detail_product->product_id }}">{{ $detail_product->product_name }}</a></h3>

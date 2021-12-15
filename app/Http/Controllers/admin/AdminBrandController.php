@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Brand;
 use Illuminate\Support\Facades\File;
 
-class merkController extends Controller
+class AdminBrandController extends Controller
 {
 
     public function index()

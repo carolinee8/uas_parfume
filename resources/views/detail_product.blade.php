@@ -11,7 +11,7 @@
 			<div class="colorlib-narrow-content">
 				<div class="row">
 					<div class="col-md-6">
-						<div class="about-img animate-box" data-animate-effect="fadeInLeft" style="background-image: url('https://source.unsplash.com/600x200/?parfume');">
+						<div class="about-img animate-box" data-animate-effect="fadeInLeft" style="background-image: url({{ $detail_product->product_image }});">
 						</div>
 					</div>
 					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
