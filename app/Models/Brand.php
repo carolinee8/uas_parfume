@@ -9,13 +9,7 @@ class Brand extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['brand_id'];
-
     protected $primaryKey = 'brand_id';
 
-    protected $fillable = [
-        'brand_judul',
-        'brand_desc',
-        'brand_image',
-    ];
+    protected $guarded = [];
 }

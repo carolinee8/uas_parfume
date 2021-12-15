@@ -3,20 +3,16 @@
 @section('content')
     <div class="col-md-20">
         <div class="card">
-            <form class="form-horizontal" action="/admin/admin-event/{{ $data->acara_id }}" method="post" enctype="multipart/form-data">
+            <form class="form-horizontal" action="/admin/admin-brand/{{ $data->brand_id }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 
                 <div class="card-body">
-<<<<<<< HEAD
-                    <h4 class="card-title">Edit Event</h4>
-=======
-                    <h4 class="card-title">Update Event</h4>
->>>>>>> 66db915ba8950d1042e0104230f896445ad80e9d
+                    <h4 class="card-title">Update Brand</h4>
                     <div class="form-group row">
                         <label for="etitle" class="col-sm-3 text-end control-label col-form-label">Title</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="etitle" name="title" value="{{ $data->acara_title }}" placeholder="Title. . .">
+                            <input type="text" class="form-control" id="etitle" name="title" value="{{ $data->brand_judul }}" placeholder="Title. . .">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -35,12 +31,12 @@
                         <label for="edesc" class="col-sm-3 text-end control-label col-form-label">Description</label>
                         <div class="col-sm-9">
                             <textarea class="form-control" style="margin-top: 0px; margin-bottom: 0px; height: 50px;"
-                                name="desc">{{ $data->acara_desc }}</textarea>
+                                name="desc">{{ $data->brand_desc }}</textarea>
                         </div>
                     </div>
                     <div class="border-top">
                         <div class="card-body">
-                            <a href="/admin/admin-event">
+                            <a href="/admin/admin-brand">
                                 <button type="button" class="btn btn-secondary btn-lg">
                                     <i class="fas fa-reply"></i><span> Back</span>
                                 </button>

@@ -3,6 +3,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AcaraController;
+<<<<<<< HEAD
+=======
+use App\Http\Controllers\admin\eventController;
+use App\Http\Controllers\admin\merkController;
+>>>>>>> 66db915ba8950d1042e0104230f896445ad80e9d
 use App\Http\Controllers\AdminManagementController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\LoginController;
@@ -17,6 +22,10 @@ use App\Http\Controllers\admin\AdminUserController;
 Route::get('/', [BrandController::class, 'index']);
 
 Route::get('/brand', [BrandController::class, 'index']);
+
+Route::get('/brand', [merkController::class, 'index']);
+
+Route::get('/brand/{brand}', [merkController::class, 'show']);
 
 Route::get('/product', [ProductController::class, 'index']);
 
@@ -45,6 +54,7 @@ Route::prefix('admin')->group(function () {
 
     Route::resource('/admin-product', AdminProductController::class);
 
+<<<<<<< HEAD
     Route::resource('/admin-event', AdminAcaraController::class);
 
     Route::resource('/admin-tag', AdminTagController::class);
@@ -53,5 +63,13 @@ Route::prefix('admin')->group(function () {
     
     Route::get('/admin-brand', function () {
         return view('admin/pages/Brand/admin-brand');
+=======
+    Route::resource('/admin-event', eventController::class);
+    
+    Route::resource('/admin-brand', merkController::class);
+
+    Route::get('/admin-management', function () {
+        return view('admin/pages/admin-management');
+>>>>>>> 66db915ba8950d1042e0104230f896445ad80e9d
     });
 });
