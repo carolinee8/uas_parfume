@@ -20,13 +20,6 @@ class DatabaseSeeder extends Seeder
         Product::factory(16)->create();
         Acara::factory(20)->create();
         Brand::factory(5)->create();
-
-        Tag::create([
-            'tag_name' => 'tag 1'
-        ]);
-
-        Tag::create([
-            'tag_name' => 'tag 2'
-        ]);
+        Tag::factory(20)->create();
     }
 }

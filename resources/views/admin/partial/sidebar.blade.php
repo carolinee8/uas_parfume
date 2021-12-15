@@ -15,13 +15,18 @@
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin-event"
-                        aria-expanded="false"><i class="fas fa-puzzle-piece"></i><span
+                        aria-expanded="false"><i class="fas fa-bullhorn"></i><span
                             class="hide-menu">Event</span></a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin-brand"
-                        aria-expanded="false"><i class="fas fa-ribbon"></i><span
+                        aria-expanded="false"><i class="fas fa-exclamation-circle"></i><span
                             class="hide-menu">Brand</span></a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="admin-tag"
+                        aria-expanded="false"><i class="fas fa-bookmark"></i><span
+                            class="hide-menu">Tag</span></a>
                 </li>
 
                 <li class="sidebar-item">

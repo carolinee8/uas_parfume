@@ -14,13 +14,15 @@ class Product extends Model
 
     protected $primaryKey = 'product_id';
 
-    protected $fillable = [
-        'product_name',
-        'product_image',
-        'product_desc',
-        'product_price',
-        'tag_id'
-    ];
+    // protected $fillable = [
+    //     'product_name',
+    //     'product_image',
+    //     'product_desc',
+    //     'product_price',
+    //     'tag_id'
+    // ];
+
+    protected $guarded = [];
 
     public function tag(){
         return $this->belongsTo(Tag::class,'tag_id');

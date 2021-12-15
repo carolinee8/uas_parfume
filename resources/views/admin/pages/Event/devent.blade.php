@@ -17,13 +17,13 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="etitle" class="col-sm-3 text-end control-label col-form-label">Title</label>
+                    <label for="dtitle" class="col-sm-3 text-end control-label col-form-label">Title</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" value="{{ $data->acara_title }}" disabled >
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="edesc" class="col-sm-3 text-end control-label col-form-label">Description</label>
+                    <label for="ddesc" class="col-sm-3 text-end control-label col-form-label">Description</label>
                     <div class="col-sm-9">
                         <textarea class="form-control" style="margin-top: 0px; margin-bottom: 0px; height: 50px;" disabled >
                             {{ $data->acara_desc }}

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Acara;
 use Illuminate\Support\Facades\File;
 
-class eventController extends Controller
+class AdminAcaraController extends Controller
 {
 
     public function index()

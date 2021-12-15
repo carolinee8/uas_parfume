@@ -13,13 +13,11 @@
                     <div class="comment-footer">
                       <thead>
                         <tr>
-                          <th><b>Images</b></th>
-                          <th><b>Events</b></th>
-                          <th><b>Descriptions</b></th>
-                          <th><b>Date</b></th>
+                          <th><b>Tag id</b></th>
+                          <th><b>Tag Name</b></th>
                           <th>
                             <center>
-                              <a href="/admin/admin-event/create">
+                              <a href="/admin/admin-tag/create">
                               <button type="button" class="btn btn-success text-white btn-lg">
                                   <i class="fas fa-plus"></i>
                               </button>
@@ -28,18 +26,10 @@
                           </th>
                       </thead>
                       <tbody>
-                        @foreach ($acara as $acara_item)
+                        @foreach ($tags as $tags_item)
                           <tr>
-                            <td>
-                              @if ($acara_item->acara_image != '')
-                                  <img src="{{ asset('admin_assets/images/Events/' . $acara_item->acara_image) }}" alt="Gambar Event" width="50px" height="35px">
-                              @else
-                                  <img src="{{ asset('admin_assets/images/Events/event.png') }}" alt="Gambar Event" width="50px" height="35px">
-                              @endif
-                            </td>
-                            <td>{{ $acara_item->acara_title }}</td>
-                            <td>{{ $acara_item->acara_desc }}</td>
-                            <td>{{ $acara_item->created_at }}</td>
+                            <td>{{ $tags_item->tag_id }}</td>
+                            <td>{{ $tags_item->tag_name }}</td>
                             <td>
                               <center>
                               <div class="btn-group">
@@ -47,17 +37,16 @@
                                   <i class="fas fa-sliders-h"></i>
                                 </button>
                                 <div class="dropdown-menu" style="margin: 0px;">
-                                  <a class="dropdown-item" href="/admin/admin-event/{{ $acara_item->acara_id }}/edit">
+                                  <a class="dropdown-item" href="/admin/admin-tag/{{ $tags_item->tag_id }}/edit">
                                     <i class="fas fa-edit"></i>Edit
                                   </a>
-                                  <form action="/admin/admin-event/{{ $acara_item->acara_id }}" method="post">
+                                  <form action="/admin/admin-tag/{{ $tags_item->tag_id }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                       <button class="dropdown-item">
                                           <i class="fas fa-cut"></i> Hapus
                                       </button>
                                   </form>
-                                  <a class="dropdown-item" href="/admin/admin-event/{{ $acara_item->acara_id }}"><i class="fas fa-info"></i> Detail</a>
                                 </div>
                               </div>
                               </center>

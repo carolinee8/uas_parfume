@@ -4,7 +4,7 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Data Event</h5>
+                  <h5 class="card-title">Data Admin</h5>
                   <div class="table-responsive">
                     <table
                       id="zero_config"
@@ -19,7 +19,7 @@
                           <th><b>Date</b></th>
                           <th>
                             <center>
-                              <a href="/admin/admin-event/create">
+                              <a href="/admin/admin-management/create">
                               <button type="button" class="btn btn-success text-white btn-lg">
                                   <i class="fas fa-plus"></i>
                               </button>
@@ -28,18 +28,18 @@
                           </th>
                       </thead>
                       <tbody>
-                        @foreach ($acara as $acara_item)
+                        @foreach ($users as $users_item)
                           <tr>
                             <td>
-                              @if ($acara_item->acara_image != '')
-                                  <img src="{{ asset('admin_assets/images/Events/' . $acara_item->acara_image) }}" alt="Gambar Event" width="50px" height="35px">
+                              @if ($users_item->user_image != '')
+                                  <img src="{{ asset('admin_assets/images/Users/' . $users_item->user_image) }}" alt="Gambar Event" width="50px" height="35px">
                               @else
-                                  <img src="{{ asset('admin_assets/images/Events/event.png') }}" alt="Gambar Event" width="50px" height="35px">
+                                  <img src="{{ asset('admin_assets/images/Users/imgusersdefault.png') }}" alt="Gambar Event" width="50px" height="35px">
                               @endif
                             </td>
-                            <td>{{ $acara_item->acara_title }}</td>
-                            <td>{{ $acara_item->acara_desc }}</td>
-                            <td>{{ $acara_item->created_at }}</td>
+                            <td>{{ $users_item->acara_title }}</td>
+                            <td>{{ $users_item->acara_desc }}</td>
+                            <td>{{ $users_item->created_at }}</td>
                             <td>
                               <center>
                               <div class="btn-group">
@@ -47,17 +47,17 @@
                                   <i class="fas fa-sliders-h"></i>
                                 </button>
                                 <div class="dropdown-menu" style="margin: 0px;">
-                                  <a class="dropdown-item" href="/admin/admin-event/{{ $acara_item->acara_id }}/edit">
+                                  <a class="dropdown-item" href="/admin/admin-management/{{ $users_item->acara_id }}/edit">
                                     <i class="fas fa-edit"></i>Edit
                                   </a>
-                                  <form action="/admin/admin-event/{{ $acara_item->acara_id }}" method="post">
+                                  <form action="/admin/admin-management/{{ $users_item->acara_id }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                       <button class="dropdown-item">
                                           <i class="fas fa-cut"></i> Hapus
                                       </button>
                                   </form>
-                                  <a class="dropdown-item" href="/admin/admin-event/{{ $acara_item->acara_id }}"><i class="fas fa-info"></i> Detail</a>
+                                  <a class="dropdown-item" href="/admin/admin-management/{{ $users_item->acara_id }}"><i class="fas fa-info"></i> Detail</a>
                                 </div>
                               </div>
                               </center>

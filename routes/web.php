@@ -3,13 +3,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AcaraController;
-use App\Http\Controllers\admin\eventController;
 use App\Http\Controllers\AdminManagementController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\admin\AdminAcaraController;
+use App\Http\Controllers\admin\AdminProductController;
+use App\Http\Controllers\admin\AdminTagController;
+use App\Http\Controllers\admin\AdminUserController;
 
 Route::get('/', [BrandController::class, 'index']);
 
@@ -40,28 +43,15 @@ Route::prefix('admin')->group(function () {
         return view('admin/dashboard/dashboard');
     });
 
-    Route::get('/admin-product', function () {
-        return view('admin/pages/admin-product');
-    });
-    Route::get('/cproduct', function () {
-        return view('admin/pages/cproduct');
-    });
-    Route::get('/uproduct', function () {
-        return view('admin/pages/uproduct');
-    });
-    Route::get('/dproduct', function () {
-        return view('admin/pages/dproduct');
-    });
+    Route::resource('/admin-product', AdminProductController::class);
 
-    //LALAKPOU
-    Route::resource('/admin-event', eventController::class);
-    //END LALAKPOU
+    Route::resource('/admin-event', AdminAcaraController::class);
+
+    Route::resource('/admin-tag', AdminTagController::class);
+    
+    Route::resource('/admin-management', AdminUserController::class);
     
     Route::get('/admin-brand', function () {
-        return view('admin/pages/admin-brand');
-    });
-
-    Route::get('/admin-management', function () {
-        return view('admin/pages/admin-management');
+        return view('admin/pages/Brand/admin-brand');
     });
 });

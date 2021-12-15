@@ -41,6 +41,18 @@
                                     @enderror
                                 </div>
                                 <div class="form-group mb-5">
+                                    <label class="label" for="image">Profile Photo</label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="validatedCustomFile" name="image" required>
+                                        <label class="custom-file-label" for="validatedCustomFile"></label>
+                                        @error('image')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                      </div>
+                                </div>
+                                <div class="form-group mb-5">
                                     <label class="label" for="username">Username</label>
                                     <input type="text" name="username" id="username" class="form-control @error('username') is-invalid @enderror" placeholder="Username" required value="{{ old('username') }}">
                                     @error('username')

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\AdminManagement;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreAdminManagementRequest;
+use App\Http\Requests\UpdateAdminManagementRequest;
 
 class AdminManagementController extends Controller
 {
@@ -14,7 +15,7 @@ class AdminManagementController extends Controller
      */
     public function index()
     {
-        return 'ini halaman admin management';
+        //
     }
 
     /**
@@ -30,10 +31,10 @@ class AdminManagementController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreAdminManagementRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreAdminManagementRequest $request)
     {
         //
     }
@@ -63,11 +64,11 @@ class AdminManagementController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\UpdateAdminManagementRequest  $request
      * @param  \App\Models\AdminManagement  $adminManagement
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AdminManagement $adminManagement)
+    public function update(UpdateAdminManagementRequest $request, AdminManagement $adminManagement)
     {
         //
     }
