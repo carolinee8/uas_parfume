@@ -4,6 +4,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AcaraController;
 use App\Http\Controllers\admin\eventController;
+use App\Http\Controllers\admin\merkController;
 use App\Http\Controllers\AdminManagementController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\LoginController;
@@ -14,6 +15,10 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', [BrandController::class, 'index']);
 
 Route::get('/brand', [BrandController::class, 'index']);
+
+Route::get('/brand', [merkController::class, 'index']);
+
+Route::get('/brand/{brand}', [merkController::class, 'show']);
 
 Route::get('/product', [ProductController::class, 'index']);
 
@@ -53,13 +58,9 @@ Route::prefix('admin')->group(function () {
         return view('admin/pages/dproduct');
     });
 
-    //LALAKPOU
     Route::resource('/admin-event', eventController::class);
-    //END LALAKPOU
     
-    Route::get('/admin-brand', function () {
-        return view('admin/pages/admin-brand');
-    });
+    Route::resource('/admin-brand', merkController::class);
 
     Route::get('/admin-management', function () {
         return view('admin/pages/admin-management');
