@@ -7,12 +7,12 @@
                 <h4 class="card-title">Detail Event</h4>
                 <div class="form-group row">
                     <div class="col-md-9">
-                        @if ($data->product_image != '')
+                        @if ($data->brand_image != '')
                             <img src="{{ asset('admin_assets/images/Products/' . $data->product_image) }}" alt="Gambar Event"
-                                width="50px" height="35px">
+                                style="display:block; margin:auto;" width="200px" height="175px">
                         @else
-                            <img src="{{ asset('admin_assets/images/Products/imgproductdefault.png') }}" alt="Gambar Event" width="50px"
-                                height="35px">
+                            <img src="{{ asset('admin_assets/images/Products/imgproductdefault.png') }}" alt="Gambar Event" width="200px"
+                                style="display:block; margin:auto;" height="175px">
                         @endif
                     </div>
                 </div>

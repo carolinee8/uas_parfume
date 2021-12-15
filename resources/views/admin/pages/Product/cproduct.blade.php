@@ -44,7 +44,7 @@
                   </div>
                   <div class="border-top">
                     <div class="card-body">
-                    <a href="/admin/admin-event">
+                    <a href="/admin/admin-product">
                         <button type="button" class="btn btn-secondary btn-lg">
                             <i class="fas fa-reply"></i><span> Back</span>
                         </button>
