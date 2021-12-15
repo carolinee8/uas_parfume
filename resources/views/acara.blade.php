@@ -25,7 +25,7 @@
 								<div class="desc">
 									<span><small>{{ $detail_acara->created_at->diffForHumans() }} </small></span>
 									<h3><a href="/acara/{{ $detail_acara->acara_id }}">{{ $detail_acara->acara_title }}</a></h3>
-									<p>{{ $detail_acara->acara_excerpt }}</p>
+									<p>{{ $detail_acara->acara_desc }}</p>
 								</div>
 							</div>
 						</div>

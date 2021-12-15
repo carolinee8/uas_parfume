@@ -15,7 +15,6 @@ class AcaraFactory extends Factory
     {
         return [
             'acara_title'=> $this->faker->sentence(mt_rand(1,3)),
-            'acara_excerpt'=> $this->faker->sentence(mt_rand(3,8)),
             'acara_desc'=> $this->faker->paragraph()
         ];
     }

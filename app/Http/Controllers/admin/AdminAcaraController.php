@@ -30,7 +30,6 @@ class AdminAcaraController extends Controller
             $event = [
                 'acara_title' => $request->title,
                 'acara_image' => $image_name,
-                'acara_excerpt' => $request->desc,
                 'acara_desc' => $request->desc,
             ];
 
@@ -38,7 +37,6 @@ class AdminAcaraController extends Controller
             $event = [
                 'acara_title' => $request->title,
                 'acara_image' => '',
-                'acara_excerpt' => $request->desc,
                 'acara_desc' => $request->desc,
             ];
        }
@@ -72,14 +70,12 @@ class AdminAcaraController extends Controller
             $event = [
                 'acara_title' => $request->title,
                 'acara_image' => $image_name,
-                'acara_excerpt' => $request->desc,
                 'acara_desc' => $request->desc,
             ];
 
          }else {
             $event = [
                 'acara_title' => $request->title,
-                'acara_excerpt' => $request->desc,
                 'acara_desc' => $request->desc,
             ];
          }

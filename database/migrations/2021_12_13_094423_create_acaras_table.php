@@ -16,7 +16,6 @@ class CreateAcarasTable extends Migration
         Schema::create('acaras', function (Blueprint $table) {
             $table->bigIncrements('acara_id');
             $table->string('acara_title');
-            $table->text('acara_excerpt');
             $table->text('acara_desc');
             $table->string('acara_image')->nullable();
             $table->timestamps();
