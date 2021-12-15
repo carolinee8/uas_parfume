@@ -9,10 +9,10 @@
                     <div class="col-md-9">
                         @if ($data->brand_image != '')
                             <img src="{{ asset('admin_assets/images/Brand/' . $data->brand_image) }}" alt="Logo Brand"
-                                width="50px" height="35px">
+                                style="display:block; margin:auto;" width="200px" height="175px">
                         @else
-                            <img src="{{ asset('admin_assets/images/Brand/brand.jpg') }}" alt="Logo Brand" width="50px"
-                                height="35px">
+                            <img src="{{ asset('admin_assets/images/Brand/brand.jpg') }}" alt="Logo Brand" width="200px"
+                                style="display:block; margin:auto;" height="175px">
                         @endif
                     </div>
                 </div>
