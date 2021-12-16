@@ -8,13 +8,9 @@
                 @method('PUT')
                 
                 <div class="card-body">
-<<<<<<< HEAD
                     <h4 class="card-title">Edit Event</h4>
-=======
-                    <h4 class="card-title">Update Event</h4>
->>>>>>> 66db915ba8950d1042e0104230f896445ad80e9d
                     <div class="form-group row">
-                        <label for="etitle" class="col-sm-3 text-end control-label col-form-label">Title</label>
+                        <label for="etitle" class="col-sm-3 text-end control-label col-form-label">Event Title</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="etitle" name="title" value="{{ $data->acara_title }}" placeholder="Title. . .">
                         </div>

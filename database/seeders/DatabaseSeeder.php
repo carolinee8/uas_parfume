@@ -17,7 +17,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Product::factory(16)->create();
+        // factory(Product::class, 16)->each(function($product){
+        //     factory(Tag::class, 16)->create(['tag_id'=>$product->product_id]);
+        // });
+        // Product::factory(20)->create();
         Acara::factory(20)->create();
         Brand::factory(5)->create();
         Tag::factory(20)->create();

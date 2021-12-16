@@ -22,6 +22,8 @@ class CreateProductsTable extends Migration
             $table->integer('product_price');
             $table->unsignedBigInteger('tag_id');
             $table->timestamps();
+
+            $table->foreign('tag_id')->references('tag_id')->on('tags')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

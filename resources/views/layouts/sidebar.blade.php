@@ -14,13 +14,13 @@
 		</div>
 		<ul class="list-unstyled menu-elements">
 			<li class="active">
-				<a class="scroll-link-{{ ($active === "brand") ? 'active' : '' }}" href="brand">Brand</a>
+				<a class="scroll-link-{{ ($active === "brand") ? 'active' : '' }}" href="/brand">Brand</a>
 			</li>
 			<li>
-				<a class="scroll-link-{{ ($active === "product") ? 'active' : '' }}" href="product">Product</a>
+				<a class="scroll-link-{{ ($active === "product") ? 'active' : '' }}" href="/product">Product</a>
 			</li>
 			<li>
-				<a class="scroll-link-{{ ($active === "acara") ? 'active' : '' }}" href="acara">Event</a>
+				<a class="scroll-link-{{ ($active === "acara") ? 'active' : '' }}" href="/acara">Event</a>
 			</li>
 		</ul>
 		

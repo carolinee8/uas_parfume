@@ -1,45 +1,54 @@
 @extends('admin.layouts.main')
 
 @section('content')
-    <div class="col-md-20">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Detail Event</h4>
-                <div class="form-group row">
-                    <div class="col-md-9">
-                        @if ($data->brand_image != '')
-                            <img src="{{ asset('admin_assets/images/Events/' . $data->acara_image) }}" alt="Gambar Event"
-                                style="display:block; margin:auto;" width="200px" height="175px">
-                        @else
-                            <img src="{{ asset('admin_assets/images/Events/event.png') }}" alt="Gambar Event" width="200px"
-                                style="display:block; margin:auto;" height="175px">
-                        @endif
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="etitle" class="col-sm-3 text-end control-label col-form-label">Title</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" value="{{ $data->acara_title }}" disabled >
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="edesc" class="col-sm-3 text-end control-label col-form-label">Description</label>
-                    <div class="col-sm-9">
-                        <textarea class="form-control" style="margin-top: 0px; margin-bottom: 0px; height: 50px;" disabled >
-                            {{ $data->acara_desc }}
-                        </textarea>
-                    </div>
-                </div>
-                <div class="border-top">
-                    <div class="card-body">
-                        <a href="/admin/admin-event">
-                            <button type="button" class="btn btn-secondary btn-lg">
-                                <i class="fas fa-reply"></i><span> Back</span>
-                            </button>
-                        </a>
-                    </div>
-                </div>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">Detail Event</h6>
+            <div class="card-tools">
+                <a href="/admin/admin-event" class="btn btn-sm btn-warning float-right">
+                    <i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
             </div>
         </div>
-    </div>
+        <!-- Main content -->
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th colspan="2">
+                                    <center><i class="fas fa-image"></i> <strong>Image<strong></center>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                    <center>
+                                        @if ($data->brand_image != '')
+                                        <img src="{{ asset('admin_assets/images/Events/' . $data->acara_image) }}" alt="Gambar Event"
+                                            style="display:block; margin:auto;" width="200px" height="175px">
+                                        @else
+                                            <img src="{{ asset('admin_assets/images/Events/event.png') }}" alt="Gambar Event" width="200px"
+                                                style="display:block; margin:auto;" height="175px">
+                                        @endif
+                                    </center>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td width="20%"><strong>Event Title<strong></td>
+                                <td>{{ $data->acara_title }}</td>
+                            </tr>
+                            <tr>
+                                <td width="20%"><strong>Description<strong></td>
+                                <td>{{ $data->acara_desc }}</td>
+                            </tr>
+                            <tr>
+                                <td width="20%"><strong>Date<strong></td>
+                                <td>{{ $data->created_at }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </table>
+            </div>
+        </div>
+      </div>
 @endsection

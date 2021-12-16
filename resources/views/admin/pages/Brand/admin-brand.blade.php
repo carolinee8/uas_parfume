@@ -10,6 +10,23 @@
                       id="zero_config"
                       class="table table-striped table-bordered"
                     >
+                    @if(session()->has('edit_success'))
+                      <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('edit_success') }}
+                      </div>
+                    @endif
+
+                    @if(session()->has('create_success'))
+                      <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        {{ session('create_success') }}
+                      </div>
+                    @endif
+
+                    @if(session()->has('delete_success'))
+                      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ session('delete_success') }}
+                      </div>
+                    @endif
                     <div class="comment-footer">
                       <thead>
                         <tr>
@@ -31,7 +48,7 @@
                         @foreach ($brand as $item)
                           <tr>
                             <td>
-                              @if ($item->brand_image != '')
+                              @if(isset($item->brand_image))
                                   <img src="{{ asset('admin_assets/images/Brand/' . $item->brand_image) }}" alt="Logo Brand" width="50px" height="35px">
                               @else
                                   <img src="{{ asset('admin_assets/images/Brand/brand.jpg') }}" alt="Logo Brand" width="50px" height="35px">

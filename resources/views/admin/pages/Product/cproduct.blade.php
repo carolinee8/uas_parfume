@@ -2,13 +2,14 @@
 @section('content')
 <div class="col-md-20">
               <div class="card">
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="/admin/admin-product" method="post" enctype="multipart/form-data">
+                  @csrf
                   <div class="card-body">
                     <h4 class="card-title">Create New Product</h4>
                     <div class="form-group row">
-                      <label for="fname" class="col-sm-3 text-end control-label col-form-label">Product Name</label>
+                      <label for="productname" class="col-sm-3 text-end control-label col-form-label">Product Name</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="fname" placeholder="Product Name...">
+                        <input type="text" class="form-control" id="productname" name ="productname" placeholder="Product Name...">
                       </div>
                     </div>
                     <div class="form-group row">
@@ -24,21 +25,26 @@
                     </div>
                   </div>
                     <div class="form-group row">
-                      <label for="cono1" class="col-sm-3 text-end control-label col-form-label">Description</label>
+                      <label for="cdesc" class="col-sm-3 text-end control-label col-form-label">Description</label>
                       <div class="col-sm-9">
-                        <textarea class="form-control" style="margin-top: 0px; margin-bottom: 0px; height: 50px;"></textarea>
+                        <textarea class="form-control" id="cdesc" name="desc" style="margin-top: 0px; margin-bottom: 0px; height: 50px;"></textarea>
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="email1" class="col-sm-3 text-end control-label col-form-label">Price</label>
+                      <label for="cprice" class="col-sm-3 text-end control-label col-form-label">Price</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="email1" placeholder="Price">
+                        <input type="text" class="form-control" id="cprice" name="price" placeholder="Price">
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="cono1" class="col-sm-3 text-end control-label col-form-label">Tag</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="cono1" placeholder="Tag...">
+                      <label for="ctag" class="col-sm-3 text-end control-label col-form-label">Tag</label>
+                     <div class="col-sm-9">
+                      <select class="form-control" id="ctag" name="ctag">
+                        <option selected="true" disabled="disabled">--Choose Option--</option>
+                        @foreach($tags as $tag)
+                        <option value="{{ $tag->tag_id }}">{{ $tag->tag_name }}</option>
+                        @endforeach
+                      </select>
                       </div>
                     </div>
                   </div>

@@ -41,7 +41,7 @@ class AdminBrandController extends Controller
             ];
        }
        Brand::create($brands);
-       return redirect('/admin/admin-brand');
+       return redirect('/admin/admin-brand')->with('create_success', 'Create Berhasil!');
     }
 
     public function show($id)
@@ -80,7 +80,7 @@ class AdminBrandController extends Controller
             ];
          }
          $brand->update($brands);
-         return redirect('/admin/admin-brand');
+         return redirect('/admin/admin-brand')->with('edit_success', 'Edit Berhasil!');
     }
 
     public function destroy($id)
@@ -91,6 +91,6 @@ class AdminBrandController extends Controller
                 File::delete("admin_assets/images/Brand/" . $picture);
             }
         Brand::find($id)->delete();
-        return redirect('/admin/admin-brand');
+        return redirect('/admin/admin-brand')->with('delete_success', 'Hapus Berhasil!');
     }
 }

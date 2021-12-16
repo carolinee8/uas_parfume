@@ -25,7 +25,7 @@ class Product extends Model
     protected $guarded = [];
 
     public function tag(){
-        return $this->belongsTo(Tag::class,'tag_id');
+        return $this->belongsTo(Tag::class, 'tag_id');
     }
 }
 

@@ -20,17 +20,24 @@
 					<h2 class="heading-section">Welcome!</h2>
 				</div>
 			</div>
-			<div class="row justify-content-center">
-				@if(session()->has('success'))
-				<div class="alert alert-success alert-dismissible fade show" role="alert">
-					{{ session('success') }}
-				</div>
-				@endif
-				@if(session()->has('loginError'))
+			@if(session()->has('loginError'))
 				<div class="alert alert-danger alert-dismissible fade show" role="alert">
 					{{ session('loginError') }}
 				</div>
-				@endif
+			@endif
+			
+			@if(session()->has('success'))
+			<div class="alert alert-success alert-dismissible fade show" role="alert">
+				{{ session('success') }}
+			</div>
+			@endif
+
+			@if(session()->has('delete'))
+			<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				{{ session('delete') }}
+			</div>
+			@endif
+			<div class="row justify-content-center">
 				<div class="col-md-12 col-lg-10">
 					<div class="wrap d-md-flex">
 						<div class="img" style="background-image: url({{ asset('admin_assets/images/bg-1.jpg') }});"></div>

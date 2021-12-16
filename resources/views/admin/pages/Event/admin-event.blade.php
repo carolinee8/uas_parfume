@@ -10,11 +10,28 @@
                       id="zero_config"
                       class="table table-striped table-bordered"
                     >
+                    @if(session()->has('edit_success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      {{ session('edit_success') }}
+                    </div>
+                  @endif
+
+                  @if(session()->has('create_success'))
+                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                      {{ session('create_success') }}
+                    </div>
+                  @endif
+
+                  @if(session()->has('delete_success'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                      {{ session('delete_success') }}
+                    </div>
+                  @endif
                     <div class="comment-footer">
                       <thead>
                         <tr>
                           <th><b>Images</b></th>
-                          <th><b>Events</b></th>
+                          <th><b>Events Title</b></th>
                           <th><b>Descriptions</b></th>
                           <th><b>Date</b></th>
                           <th>

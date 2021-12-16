@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Create New Event</h4>
                     <div class="form-group row">
-                        <label for="etitle" class="col-sm-3 text-end control-label col-form-label">Title</label>
+                        <label for="etitle" class="col-sm-3 text-end control-label col-form-label">Event Title</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="etitle" name="title" placeholder="Title. . .">
                         </div>

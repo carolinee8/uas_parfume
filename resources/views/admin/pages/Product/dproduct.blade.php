@@ -1,57 +1,58 @@
 @extends('admin.layouts.main')
 
 @section('content')
-    <div class="col-md-20">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Detail Product</h4>
-                <div class="form-group row">
-                    <div class="col-md-20">
-                        @if ($data->product_image != '')
-                            <img src="{{ asset('admin_assets/images/Products/' . $data->product_image) }}" alt="Gambar Product"
-                            style="display:block; margin:auto;" width="200px" height="175px">
-                        @else
-                            <img src="{{ asset('admin_assets/images/Products/imgproductdefault.png') }}" alt="Gambar Product" width="200px"
-                            style="display:block; margin:auto;" height="175px">
-                        @endif
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="dproductname" class="col-sm-2 text-end control-label col-form-label">Product Name</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" value="{{ $data->product_name }}" disabled >
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="desc" class="col-sm-2 text-end control-label col-form-label">Description</label>
-                    <div class="col-sm-9">
-                        <textarea class="form-control" style="margin-top: 0px; margin-bottom: 0px; height: 50px;" disabled >
-                        {{ $data->product_desc }}
-                        </textarea>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="dprice" class="col-sm-2 text-end control-label col-form-label">Price</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" value="{{ $data->product_price }}" disabled >
-                    </div>
-                </div>
-                {{-- <div class="form-group row">
-                    <label for="etag" class="col-sm-3 text-end control-label col-form-label">Tag</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" value="{{ $data->tag_id }}" disabled >
-                    </div>
-                </div> --}}
-                <div class="border-top">
-                    <div class="card-body">
-                        <a href="/admin/admin-product">
-                            <button type="button" class="btn btn-secondary btn-lg">
-                                <i class="fas fa-reply"></i><span> Back</span>
-                            </button>
-                        </a>
-                    </div>
-                </div>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">Detail Product</h6>
+            <div class="card-tools">
+                <a href="/admin/admin-product" class="btn btn-sm btn-warning float-right">
+                    <i class="fas fa-arrow-alt-circle-left"></i> Kembali</a>
             </div>
         </div>
-    </div>
+        <!-- Main content -->
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th colspan="2">
+                                    <center><i class="fas fa-image"></i> <strong>Image<strong></center>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                    <center>
+                                        @if ($data->product_image != '')
+                                            <img src="{{ asset('admin_assets/images/Products/' . $data->product_image) }}" alt="Gambar Product"
+                                            style="display:block; margin:auto;" width="200px" height="175px">
+                                        @else
+                                            <img src="{{ asset('admin_assets/images/Products/imgproductdefault.png') }}" alt="Gambar Product" width="200px"
+                                            style="display:block; margin:auto;" height="175px">
+                                        @endif
+                                    </center>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td width="20%"><strong>Product Name<strong></td>
+                                <td>{{ $data->product_name }}</td>
+                            </tr>
+                            <tr>
+                                <td width="20%"><strong>Description<strong></td>
+                                <td>{{ $data->product_desc }}</td>
+                            </tr>
+                            <tr>
+                                <td width="20%"><strong>Price (Rp)<strong></td>
+                                <td>{{ $data->product_price }}</td>
+                            </tr>
+                            <tr>
+                                <td width="20%"><strong>Tag<strong></td>
+                                <td>{{ $data->tag_name }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </table>
+            </div>
+        </div>
+      </div>
 @endsection

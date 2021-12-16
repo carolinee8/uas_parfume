@@ -41,7 +41,7 @@ class AdminAcaraController extends Controller
             ];
        }
        Acara::create($event);
-       return redirect('/admin/admin-event');
+       return redirect('/admin/admin-event')->with('create_success', 'Create Berhasil!');
     }
 
     public function show($id)
@@ -80,7 +80,7 @@ class AdminAcaraController extends Controller
             ];
          }
          $acara->update($event);
-         return redirect('/admin/admin-event');
+         return redirect('/admin/admin-event')->with('edit_success', 'Edit Berhasil!');
     }
 
     public function destroy($id)
@@ -91,6 +91,6 @@ class AdminAcaraController extends Controller
                 File::delete("admin_assets/images/Events/" . $picture);
             }
         Acara::find($id)->delete();
-        return redirect('/admin/admin-event');
+        return redirect('/admin/admin-event')->with('delete_success', 'Hapus Berhasil!');
     }
 }

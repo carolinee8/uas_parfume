@@ -5,7 +5,6 @@
         <div class="card">
             <form class="form-horizontal" action="/admin/admin-brand" method="post" enctype="multipart/form-data">
                 @csrf
-
                 <div class="card-body">
                     <h4 class="card-title">Create New Brand</h4>
                     <div class="form-group row">

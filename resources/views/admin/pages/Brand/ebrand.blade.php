@@ -8,7 +8,7 @@
                 @method('PUT')
                 
                 <div class="card-body">
-                    <h4 class="card-title">Update Brand</h4>
+                    <h4 class="card-title">Edit Brand</h4>
                     <div class="form-group row">
                         <label for="etitle" class="col-sm-3 text-end control-label col-form-label">Title</label>
                         <div class="col-sm-9">

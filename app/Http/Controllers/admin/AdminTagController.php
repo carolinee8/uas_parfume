@@ -27,19 +27,20 @@ class AdminTagController extends Controller
             'tag_name' => $request->tagname
         ];
        Tag::create($tag);
-       return redirect('/admin/admin-tag');
+       return redirect('/admin/admin-tag')->with('create_success', 'Create Berhasil!');
     }
 
-    public function show($id)
-    {
-        $data = Tag::find($id);
-        return view('admin/pages/Tag/dtag', compact('data'));
-    }
+    // public function show($id)
+    // {
+    //     $data = Tag::find($id);
+    //     return view('admin/pages/Tag/dtag', compact('data'));
+    // }
 
     public function edit($id)
     {
         $data = Tag::find($id);
-        return view('admin/pages/Tag/etag', compact('data'));
+        $tags = Tag::all();
+        return view('admin/pages/Tag/etag', compact('data', 'tags'));
     }
 
     public function update(Request $request, $id)
@@ -50,12 +51,12 @@ class AdminTagController extends Controller
             'tag_name' => $request->tagname,
         ];
          $tags->update($tag);
-         return redirect('/admin/admin-tag');
+         return redirect('/admin/admin-tag')->with('edit_success', 'Edit Berhasil!');
     }
 
     public function destroy($id)
     {
         Tag::find($id)->delete();
-        return redirect('/admin/admin-tag');
+        return redirect('/admin/admin-tag')->with('delete_success', 'Hapus Berhasil!');
     }
 }

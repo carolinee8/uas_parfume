@@ -24,7 +24,7 @@
 								<div class="desc">
 									<div class="con">
 										<h3><a href="/product/{{ $detail_product->product_id }}">{{ $detail_product->product_name }}</a></h3>
-										<span>{{ $detail_product->tag->tag_name }}</span>
+										<span>{{ $detail_product->tag_id }}</span>
 										<p class="icon">
 											<span><i class="icon-share3"></i></a></span>
 											<span><i class="icon-heart"></i></span>

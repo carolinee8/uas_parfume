@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Redirect;
 
 class AdminDashboardController extends Controller
 {
@@ -13,7 +15,7 @@ class AdminDashboardController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('admin/pages/AdminManagement/admin-management', compact('users'));
+        return view('admin/dashboard/dashboard_index', compact('users'));
     }
 
     // public function create()
@@ -21,49 +23,49 @@ class AdminDashboardController extends Controller
     //     return view('admin/pages/AdminManagement/cmanagement');
     // }
 
-    public function store(Request $request)
-    {
-       if ($request->has('image')){
-            $image = $request->image;
-            $image_name = time() . '.jpg';
-            $image->move(public_path() . '/admin_assets/images/Users/', $image_name);
-            $user = [
-                'name' => $request->name,
-                'user_image' => $image_name,
-                'email' => $request->email,
-                'username' => $request->username,
-                // 'role' => $request->role,
-            ];
+    // public function store(Request $request)
+    // {
+    //    if ($request->has('image')){
+    //         $image = $request->image;
+    //         $image_name = time() . '.jpg';
+    //         $image->move(public_path() . '/admin_assets/images/Users/', $image_name);
+    //         $user = [
+    //             'name' => $request->name,
+    //             'user_image' => $image_name,
+    //             'email' => $request->email,
+    //             'username' => $request->username,
+    //             // 'role' => $request->role,
+    //         ];
 
-       }else {
-            $user = [
-                'name' => $request->name,
-                'user_image' => '',
-                'email' => $request->email,
-                'username' => $request->username,
-            ];
-       }
-       User::create($user);
-       return redirect('/admin/admin-management');
-    }
+    //    }else {
+    //         $user = [
+    //             'name' => $request->name,
+    //             'user_image' => '',
+    //             'email' => $request->email,
+    //             'username' => $request->username,
+    //         ];
+    //    }
+    //    User::create($user);
+    //    return redirect('/admin/admin-management');
+    // }
 
     public function show($id)
     {
         $data = User::find($id);
-        return view('admin/pages/AdminManagement/dmanagement', compact('data'));
+        return view('admin/dashboard/edashboard', compact('data'));
     }
 
-    public function edit($id)
+    public function edit()
     {
-        $data = User::find($id);
-        return view('admin/pages/AdminManagement/emanagement', compact('data'));
+        $data = User::find(Auth::user()->user_id);
+        return view('admin/dashboard/edashboard', compact('data'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $users = User::findorfail($id);
+        $users = User::findorfail(Auth::user()->user_id);
         
-        if ($request->has('image')){
+        if ($request->has('user_image')){
         $picture = $users->user_image;
         File::delete("admin_assets/images/Users/" . $picture);
             
@@ -85,17 +87,43 @@ class AdminDashboardController extends Controller
             ];
          }
          $users->update($user);
-         return redirect('/admin/admin-management');
+         return redirect('/dashboard/dashboard_index');
     }
 
-    public function destroy($id)
+    // public function destroy()
+    // {
+    //     // $user = User::find( auth()->user()->user_id);
+    //     // // if($user->delete()) {
+    //     // //     Auth::logout();
+    //     // //     // return redirect('/login')->with('delete', 'Your account has been deleted!');
+    //     // //     return Redirect::route('/login')->with('delete', 'Your account has been deleted!');
+    //     // // }
+    //     // // // return redirect('/login');
+
+    //     // $user->delete();
+    //     // // return redirect('/login')->with('delete', 'Your account has been deleted!');
+
+    //     // // User::find($id)->delete();
+
+    //     // $user = User::find(Auth::user()->id);
+
+    //     // Auth::logout();
+    
+    //     // if ($user->delete()) {
+    
+    //     //      return Redirect::route('login')->with('delete', 'Your account has been deleted!');
+    //     // }
+    //     // return redirect('/login');
+
+    //     if($this->userManipulator->softDeleteUser(Auth::user())){
+    //         Auth::logout();
+    //         return redirect(url('login'));
+    //     }
+    // }
+
+    public function destroy($user_id)
     {
-        $users = User::findorfail($id);
-            if ($users->user_image != ''){
-                $picture = $users->user_image;
-                File::delete("admin_assets/images/Users/" . $picture);
-            }
-        User::find($id)->delete();
-        return redirect('/admin/admin-management');
+        User::find($user_id)->delete();
+        return redirect('/login');
     }
 }
