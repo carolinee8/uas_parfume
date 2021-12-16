@@ -10,10 +10,12 @@
 							<h2 class="colorlib-heading">Our Products</h2>
 						</div>
 						<div class="input-group mb-3 animate-box">
+							<div class="form-inline">
 							<form action="/product">
-								<input type="text" class="form-control" placeholder="Search Product" name="search_product">
+								<input type="text" class="form-control mb-2 mr-sm-2" size="40px" placeholder="Search Product" name="search_product">
 								<button class="btn btn-primary btn-learn" type="submit">Search</button>
 							</form>
+							</div>
 						</div>	
 					</div>
 					@if($product->count())
