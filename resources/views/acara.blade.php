@@ -10,10 +10,12 @@
 							<h2 class="colorlib-heading">Find Our Events</h2>
 						</div>
 						<div class="input-group mb-3 animate-box">
+							<div class="form-inline">
 							<form action="/acara">
-								<input type="text" class="form-control" placeholder="Search Acara" name="search_acara">
+								<input type="text" class="form-control mb-2 mr-sm-2" size="40px" placeholder="Search Acara" name="search_acara">
 								<button class="btn btn-primary btn-learn" type="submit">Search</button>
 							</form>
+							</div>
 						</div>	
 					</div>
 					@if($acara->count())
