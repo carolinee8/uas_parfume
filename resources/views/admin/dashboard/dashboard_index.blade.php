@@ -81,8 +81,8 @@
                           <tr>
                               <th colspan="2">
                                   <center>
-                                    @if ("{{ auth()->user()->user_image }}" != '')
-                                        <img src="{{ auth()->user()->user_image }}" alt="Gambar Profil"
+                                    @if ("{{ asset('admin_assets/images/users/' . auth()->user()->user_image) }}" != '')
+                                        <img src="{{ asset('admin_assets/images/users/' . auth()->user()->user_image) }}" alt="Gambar Profil"
                                             style="display:block; margin:auto;" width="200px" height="175px">
                                     @else
                                         <img src="{{ asset('admin_assets/images/Users/imgusersdefault.png') }}" alt="Gambar Profil" width="200px"

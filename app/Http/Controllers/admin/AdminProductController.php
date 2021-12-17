@@ -51,11 +51,11 @@ class AdminProductController extends Controller
        return redirect('/admin/admin-product')->with('create_success', 'Create Berhasil!');
     }
 
-    // public function show($id)
-    // {
-    //     $data = Product::find($id);
-    //     return view('admin/pages/Product/dproduct', compact('data'));
-    // }
+    public function show($id)
+    {
+        $data = Product::find($id);
+        return view('admin/pages/Product/dproduct', compact('data'));
+    }
 
     public function edit($id)
     {
