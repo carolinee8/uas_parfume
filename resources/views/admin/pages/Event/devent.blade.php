@@ -23,7 +23,7 @@
                             <tr>
                                 <th colspan="2">
                                     <center>
-                                        @if ($data->brand_image != '')
+                                        @if (!$data->brand_image)
                                         <img src="{{ asset('admin_assets/images/Events/' . $data->acara_image) }}" alt="Gambar Event"
                                             style="display:block; margin:auto;" width="200px" height="175px">
                                         @else
