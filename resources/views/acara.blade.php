@@ -23,7 +23,7 @@
 						@foreach ($acara as $detail_acara)
 						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
 							<div class="blog-entry">
-								<a href="/acara/{{ $detail_acara->acara_id }}" class="blog-img"><img src="{{ $detail_acara->acara_image }}" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+								<a href="/acara/{{ $detail_acara->acara_id }}" class="blog-img"><img src="{{ asset('admin_assets/images/Events/' . $detail_acara->acara_image) }}" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
 								<div class="desc">
 									<span><small>{{ $detail_acara->created_at->diffForHumans() }} </small></span>
 									<h3><a href="/acara/{{ $detail_acara->acara_id }}">{{ $detail_acara->acara_title }}</a></h3>

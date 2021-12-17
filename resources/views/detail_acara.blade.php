@@ -13,7 +13,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-6">
-						<div class="about-img animate-box" data-animate-effect="fadeInLeft" style="background-image: url({{ $detail_acara->acara_image }});">
+						<div class="about-img animate-box" data-animate-effect="fadeInLeft" style="background-image: url({{ asset( 'admin_assets/images/Events/' . $detail_acara->acara_image) }});">
 						</div>
 					</div>
 					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">

@@ -29,7 +29,7 @@ class AdminProductController extends Controller
        if ($request->has('image')){
             $image = $request->image;
             $image_name = time() . '.jpg';
-            $image->move(public_path() . '/admin_assets/images/Product/', $image_name);
+            $image->move(public_path() . '/admin_assets/images/Products/', $image_name);
             $product = [
                 'product_name' => $request->productname,
                 'product_image' => $image_name,

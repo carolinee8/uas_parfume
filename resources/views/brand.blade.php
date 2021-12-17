@@ -7,7 +7,7 @@
 				<div class="flexslider js-fullheight">
 					<ul class="slides">
 						@foreach ($brand as $brand)
-						<li style="background-image: url({{asset('user_assets/images/img_bg_1.jpg')}});">
+						<li style="background-image: url({{asset('admin_assets/images/Brand/' . $brand->brand_image)}});">
 							<div class="overlay"></div>
 							<div class="container-fluid">
 								<div class="row">
@@ -64,7 +64,7 @@
 				<div class="colorlib-narrow-content">
 					<div class="row">
 						<div class="col-md-6">
-							<div class="about-img animate-box" data-animate-effect="fadeInLeft" style="background-image: url({{asset('user_assets/images/img_bg_2.jpg')}});">
+							<div class="about-img animate-box" data-animate-effect="fadeInLeft" style="background-image: url({{asset('admin_assets/images/Brand/' . $brand->brand_image )}});">
 							</div>
 						</div>
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
